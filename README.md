@@ -18,8 +18,8 @@ Dockerized GeoServer.
 [Automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) on [docker registry](https://registry.hub.docker.com/):
 
 * Latest ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/master/Dockerfile))
-* 2.8.0 ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.8.0/Dockerfile))
-* 2.7.2 ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.7.2/Dockerfile))
+* 2.8.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x/Dockerfile))
+* 2.7.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.7.x/Dockerfile))
 
 
 ## Running
@@ -50,5 +50,5 @@ docker logs -f MyGeoServerInstance
 
 Other non pre-built versions that can be found on GitHub repo:
 
-* [GeoServer + H2 extension](https://github.com/oscarfonts/docker-geoserver/tree/2.8.0-h2)
-* [GeoServer + Oracle extension](https://github.com/oscarfonts/docker-geoserver/tree/2.8.0-oracle). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/2.8.0-oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/2.8.0-oracle/run.sh).
+* [GeoServer + H2 extension](https://github.com/oscarfonts/docker-geoserver/tree/2.8.x-h2)
+* [GeoServer + Oracle extension](https://github.com/oscarfonts/docker-geoserver/tree/2.8.x-oracle). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x-oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x-oracle/run.sh).
