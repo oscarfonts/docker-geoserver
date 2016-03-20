@@ -1,8 +1,8 @@
-FROM tomcat:8-jre7
+FROM tomcat:8-jre8
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.8.0
+ENV GEOSERVER_VERSION 2.9-beta
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 
 # Uncomment to use APT cache (requires apt-cacher-ng on host)
@@ -16,7 +16,7 @@ RUN set -x \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Native JAI & ImageIO
-RUN cd /usr/lib/jvm/java-7-openjdk-amd64 \
+RUN cd /usr/lib/jvm/java-8-openjdk-amd64 \
 	&& wget http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64-jdk.bin \
 	&& tail -n +139 jai-1_1_3-lib-linux-amd64-jdk.bin > INSTALL-jai \
 	&& chmod u+x INSTALL-jai \
@@ -40,5 +40,6 @@ RUN mkdir /var/local/geoserver \
 
 # Tomcat environment
 ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
-	-Xms768m -Xmx1560m -XX:PermSize=384m -XX:MaxPermSize=512m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
+	-Xms768m -Xmx1560m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
 	-DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
+
