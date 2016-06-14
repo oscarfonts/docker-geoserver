@@ -42,3 +42,5 @@ RUN mkdir /var/local/geoserver \
 ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
 	-Xms768m -Xmx1560m -XX:PermSize=384m -XX:MaxPermSize=512m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
 	-DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
+
+EXPOSE 8080
