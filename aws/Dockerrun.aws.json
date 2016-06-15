@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Volumes": [
+    {
+      "HostDirectory": "/mnt/geoserver/data",
+      "ContainerDirectory": "/var/local/geoserver"
+    }
+  ],
+  "containerDefinitions": [{
+    "portMappings": [{
+          "hostPort": 80,
+          "containerPort": 8080
+     }]
+  }],
+  "environment": [{
+    "name" : "CATALINA_OPTS"
+    "value" : "-server -Djava.awt.headless=true -Xmx512m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -DGEOSERVER_DATA_DIR=/var/local/geoserver"
+  }]
+}
