@@ -13,7 +13,7 @@
      }]
   }],
   "environment": [{
-    "name" : "CATALINA_OPTS"
+    "name" : "CATALINA_OPTS",
     "value" : "-server -Djava.awt.headless=true -Xmx512m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -DGEOSERVER_DATA_DIR=/var/local/geoserver"
   }]
 }
