@@ -52,3 +52,5 @@ Other non pre-built versions that can be found on GitHub repo:
 
 * [GeoServer + H2 extension](https://github.com/oscarfonts/docker-geoserver/tree/2.8.x-h2)
 * [GeoServer + Oracle extension](https://github.com/oscarfonts/docker-geoserver/tree/2.8.x-oracle). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x-oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x-oracle/run.sh).
+* [GeoServer + Amazon Web Services](https://github.com/oscarfonts/docker-geoserver/tree/2.8.x-aws). It provides AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See the [deploy instructions](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x-aws/aws/deploy.md).
+
