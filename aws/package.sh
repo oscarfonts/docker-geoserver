@@ -41,7 +41,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p build/.ebextensions
 
 cp $DIR/Dockerrun.aws.json build
-cp $DIR/../Dockerfile build
+cp env.config build/.ebextensions
 sed "s/__block_device__/${blockdevice}/" ebs.config > build/.ebextensions/ebs.config
 
 cd $DIR/build
