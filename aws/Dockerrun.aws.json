@@ -1,19 +1,16 @@
 {
   "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "oscarfonts/geoserver:2.8.x"
+  },
+  "Ports": [{
+    "HostPort" : "80",
+    "ContainerPort": "8080"
+  }],
   "Volumes": [
     {
       "HostDirectory": "/mnt/geoserver/data",
       "ContainerDirectory": "/var/local/geoserver"
     }
-  ],
-  "containerDefinitions": [{
-    "portMappings": [{
-          "hostPort": 80,
-          "containerPort": 8080
-     }]
-  }],
-  "environment": [{
-    "name" : "CATALINA_OPTS",
-    "value" : "-server -Djava.awt.headless=true -Xmx512m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -DGEOSERVER_DATA_DIR=/var/local/geoserver"
-  }]
+  ]
 }
