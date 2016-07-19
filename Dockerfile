@@ -30,6 +30,7 @@ RUN cd /usr/lib/jvm/java-8-openjdk-amd64 \
 	&& rm jai_imageio-1_1-lib-linux-amd64-jdk.bin INSTALL-jai_imageio *.txt
 
 # GeoServer
+ADD conf/geoserver.xml /usr/local/tomcat/conf/Catalina/localhost/geoserver.xml
 RUN mkdir ${GEOSERVER_DATA_DIR} \
 	&& mkdir ${GEOSERVER_INSTALL_DIR} \
 	&& cd ${GEOSERVER_INSTALL_DIR} \
