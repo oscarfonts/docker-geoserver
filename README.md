@@ -34,7 +34,7 @@ docker pull oscarfonts/geoserver
 Run as a service, exposing port 8080 and using a hosted GEOSERVER_DATA_DIR:
 
 ```
-docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver oscarfonts/geoserver --name=MyGeoServerInstance
+docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver -v /path/to/local/context_xml:/usr/local/tomcat/conf/Catalina/geoserver.xml localhost --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
 Get an [empty minimal GEOSERVER_DATA_DIR structure](https://github.com/oscarfonts/docker-geoserver/tree/master/data_dir) to start with.
