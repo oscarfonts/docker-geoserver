@@ -4,6 +4,7 @@ MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
 ENV GEOSERVER_VERSION 2.9.0
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
+ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 
 # Uncomment to use APT cache (requires apt-cacher-ng on host)
 #RUN echo "Acquire::http { Proxy \"http://`/sbin/ip route|awk '/default/ { print $3 }'`:3142\"; };" > /etc/apt/apt.conf.d/71-apt-cacher-ng
@@ -29,9 +30,10 @@ RUN cd /usr/lib/jvm/java-8-openjdk-amd64 \
 	&& rm jai_imageio-1_1-lib-linux-amd64-jdk.bin INSTALL-jai_imageio *.txt
 
 # GeoServer
-RUN mkdir /var/local/geoserver \
-	&& mkdir /usr/local/tomcat/webapps/geoserver \
-	&& cd /usr/local/tomcat/webapps/geoserver \
+ADD conf/geoserver.xml /usr/local/tomcat/conf/Catalina/localhost/geoserver.xml
+RUN mkdir ${GEOSERVER_DATA_DIR} \
+	&& mkdir ${GEOSERVER_INSTALL_DIR} \
+	&& cd ${GEOSERVER_INSTALL_DIR} \
 	&& wget http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-war.zip \
 	&& unzip geoserver-${GEOSERVER_VERSION}-war.zip \
 	&& unzip geoserver.war \
