@@ -47,10 +47,11 @@ $ sudo mv /tmp/<your_geoserver_data_dir>/* /mnt/<your_device>
 Once you have a proper snapshot you can umount the original volume and destroy it.
 
 ## Package configuration files
-The EB package should contain three files:
-* `Dockerfile`. This should be packaged simply as is.
-* `Dockerrun.aws.json`. This contains options to be used for running the container. It can be packaged as is, but can also be configured to, for example, change the ports or the `CATALINA_OPTS` environment variable.
+The EB package should contain the following:
+* `Dockerrun.aws.json`. This contains the name of the image to use (`oscarfonts/geoserver:<version>`) and options to map ports and files/directories between the host and the container.
+* `conf`. A directory containing the Tomcat `context.xml` file to deploy GeoServer. It is mapped to `/usr/local/tomcat/conf/Catalina/localhost`.
 * `.ebextensions/ebs.config`. A configuration file to specify EB how to mount the EBS volume with the GeoServer data directory and from which snapshot.
+* `.ebextensions/env.config`. A configuration file to specify environment variables, such as `CATALINA_OPTS`.
 
 In order to package it easily, a `package.sh` script is provided. It requires at least the snapshot identifier and the size of the volume to create:
 ```
