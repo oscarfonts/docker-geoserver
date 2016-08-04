@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage="$(basename "$0") -s <snapshot_id> -g <volume_size> [-d] [-t volume_type] [-h]
+usage="$(basename "$0") -s <snapshot_id> -g <volume_size> [-d] [-t volume_type] [-f context_xml_file] [-h]
 
 where:
     -h  show this help text
@@ -13,7 +13,7 @@ delete_on_termination="false"
 volume_size=""
 volume_type="gp2"
 
-while getopts "h?g:dt:s:" opt; do
+while getopts "h?g:dt:s:f:" opt; do
     case "$opt" in
     h|\?)
         echo -e "$usage"
@@ -22,6 +22,7 @@ while getopts "h?g:dt:s:" opt; do
     s)  snapshot_id=$OPTARG;;
     g)  volume_size=$OPTARG;;
     t)  volume_type=$OPTARG;;
+    f)  context_xml_file=$OPTARG;;
     d)  delete_on_termination="true";;
     esac
 done
@@ -39,6 +40,13 @@ blockdevice="$snapshot_id:$volume_size:$delete_on_termination:$volume_type"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p build/.ebextensions
+mkdir build/conf
+
+if [ -n "$context_xml_file" ]; then
+  cp $context_xml_file build/conf
+else
+  cp $DIR/../conf/geoserver.xml build/conf
+fi
 
 cp $DIR/Dockerrun.aws.json build
 cp env.config build/.ebextensions
