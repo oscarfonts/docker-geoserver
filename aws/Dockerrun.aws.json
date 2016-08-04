@@ -11,6 +11,10 @@
     {
       "HostDirectory": "/mnt/geoserver/data",
       "ContainerDirectory": "/var/local/geoserver"
+    },
+    {
+      "HostDirectory": "/var/app/current/conf",
+      "ContainerDirectory": "/usr/local/tomcat/conf/Catalina/localhost"
     }
   ]
 }
