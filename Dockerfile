@@ -2,7 +2,7 @@ FROM tomcat:8-jre8
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.9-beta
+ENV GEOSERVER_VERSION 2.10-M0
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 
 # Uncomment to use APT cache (requires apt-cacher-ng on host)
