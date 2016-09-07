@@ -18,7 +18,8 @@ Dockerized GeoServer.
 
 [Automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) on [docker registry](https://registry.hub.docker.com/):
 
-* Latest (2.9.x) ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/master/Dockerfile))
+* Latest (2.10-M0) ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/master/Dockerfile))
+* 2.9.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.9.x/Dockerfile))
 * 2.8.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x/Dockerfile))
 * 2.7.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.7.x/Dockerfile))
 
