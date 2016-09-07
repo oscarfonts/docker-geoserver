@@ -11,13 +11,14 @@ Dockerized GeoServer.
 * Separate GEOSERVER_DATA_DIR location (on /var/local/geoserver).
 * Automatic installation of [Native JAI and Image IO](http://docs.geoserver.org/latest/en/user/production/java.html#install-native-jai-and-jai-image-i-o-extensions) for better performance.
 * Automatic installation of [Microsoft Core Fonts](http://www.microsoft.com/typography/fonts/web.aspx) for better labelling compatibility.
+* AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
 
 ## Trusted builds
 
 [Automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) on [docker registry](https://registry.hub.docker.com/):
 
-* Latest ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/master/Dockerfile))
+* Latest (2.9.x) ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/master/Dockerfile))
 * 2.8.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.8.x/Dockerfile))
 * 2.7.x ([Dockerfile](https://github.com/oscarfonts/docker-geoserver/blob/2.7.x/Dockerfile))
 
@@ -33,11 +34,18 @@ docker pull oscarfonts/geoserver
 Run as a service, exposing port 8080 and using a hosted GEOSERVER_DATA_DIR:
 
 ```
-docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver oscarfonts/geoserver --name=MyGeoServerInstance
+docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver localhost --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
 Get an [empty minimal GEOSERVER_DATA_DIR structure](https://github.com/oscarfonts/docker-geoserver/tree/master/data_dir) to start with.
 
+It is also possible to configure the context path by providing a Catalina configuration directory:
+
+```
+docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver -v /path/to/local/conf_dir:/usr/local/tomcat/conf/Catalina/localhost --name=MyGeoServerInstance oscarfonts/geoserver
+```
+
+See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/conf).
 
 See the tomcat logs while running:
 
