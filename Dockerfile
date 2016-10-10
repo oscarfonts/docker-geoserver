@@ -40,6 +40,23 @@ RUN mkdir ${GEOSERVER_DATA_DIR} \
 	&& mv data/* ${GEOSERVER_DATA_DIR} \
 	&& rm -rf geoserver-${GEOSERVER_VERSION}-war.zip geoserver.war target *.txt
 
+# Enable CORS
+RUN sed -i '\:</web-app>:i\
+    <filter>\
+        <filter-name>CorsFilter</filter-name>\
+        <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>\
+    </filter>\
+\
+    <filter-mapping>\
+        <filter-name>CorsFilter</filter-name>\
+        <url-pattern>/*</url-pattern>\
+    </filter-mapping>\
+\
+    <init-param>\
+        <param-name>cors.support.credentials</param-name>\
+        <param-value>true</param-value>\
+    </init-param>' ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml
+
 # Tomcat environment
 ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
 	-Xms768m -Xmx1560m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
