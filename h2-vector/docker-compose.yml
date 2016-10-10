@@ -1,0 +1,24 @@
+version: '2'
+services:
+  h2:
+    image: oscarfonts/h2:geodb
+    container_name: h2-geodb
+    volumes:
+      - "./data_dir:/opt/h2-data"
+    ports:
+      - 1521:1521
+      - 81:81
+    restart: always
+  geoserver:
+    depends_on:
+      - h2
+    build: .
+    image: geoserver-h2
+    container_name: geoserver-h2
+    volumes:
+      - "./data_dir:/var/local/geoserver"
+    links:
+      - h2
+    ports:
+      - "8080:8080"
+    restart: always
