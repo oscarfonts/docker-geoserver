@@ -17,7 +17,7 @@ Dockerized GeoServer.
 
 ## Trusted builds
 
-Active versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://hub.docker.com/r/oscarfonts/geoserver/):
+Active versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
 * [`latest`, `stable`, `2.9.x`, `2.9.1` (*2.9.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.9.1/Dockerfile)
 * [`maintenance`, `2.8.x`, `2.8.5` (*2.8.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.8.5/Dockerfile)

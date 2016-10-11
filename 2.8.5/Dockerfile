@@ -17,7 +17,7 @@ ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 #	&& rm -rf /var/lib/apt/lists/*
 
 # Native JAI & ImageIO
-RUN cd /usr/lib/jvm/java-8-openjdk-amd64 \
+RUN cd /usr/lib/jvm/java-7-openjdk-amd64 \
 	&& wget http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64-jdk.bin \
 	&& tail -n +139 jai-1_1_3-lib-linux-amd64-jdk.bin > INSTALL-jai \
 	&& chmod u+x INSTALL-jai \
