@@ -21,7 +21,7 @@ Active versions with [automated builds](https://hub.docker.com/r/oscarfonts/geos
 
 * [`latest`, `stable`, `2.9.x`, `2.9.1` (*2.9.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.9.1/Dockerfile)
 * [`maintenance`, `2.8.x`, `2.8.5` (*2.8.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.8.5/Dockerfile)
-* [`development`, `2.10.x`, `2.10-beta` (*2.10-beta/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.10-beta/Dockerfile)
+* [`development`, `2.10.x`, `2.10-RC1` (*2.10-beta/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.10-RC1/Dockerfile)
 
 Other experimental (no automated build):
 
