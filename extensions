@@ -1,0 +1,60 @@
+##################
+# Vector formats #
+##################
+#app-schema
+#arcsde
+#db2
+#h2
+#mysql
+#oracle
+#feature-pregeneralized
+#sqlserver
+#teradata
+
+####################
+# Coverage formats #
+####################
+#gdal
+#grib
+pyramid
+#imagemosaic-jdbc
+#jp2k
+#netcdf
+
+##################
+# Output formats #
+##################
+#dxf
+#excel
+#imagemap
+#libjpeg-turbo
+#netcdf-out
+#ogr-wfs
+#ogr-wps
+#xslt
+
+############
+# Services #
+############
+#csw
+#wcs2_0-eo
+#wps
+#wps-cluster-hazelcast
+
+##################
+# Miscellaneouss #
+##################
+#charts
+control-flow
+#querylayer # Cross Layer Filtering
+#css
+#cas
+geofence
+#geofence-server
+#monitor
+#monitor-hibernate
+#importer
+#importer-bdb
+#inspire
+#printing
+
