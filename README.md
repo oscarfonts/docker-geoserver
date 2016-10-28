@@ -11,7 +11,7 @@ Dockerized GeoServer.
 * Separate GEOSERVER_DATA_DIR location (on /var/local/geoserver).
 * [CORS ready](http://enable-cors.org/server_tomcat.html).
 * Automatic installation of [Native JAI and Image IO](http://docs.geoserver.org/latest/en/user/production/java.html#install-native-jai-and-jai-image-i-o-extensions) for better performance.
-* Configurable extensions (only available for 2.9.x versions >=2.9.2).
+* Configurable extensions.
 * ~Automatic installation of [Microsoft Core Fonts](http://www.microsoft.com/typography/fonts/web.aspx) for better labelling compatibility.~
 * AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
@@ -58,7 +58,7 @@ To add extensions to your GeoServer installation, provide a directory with the u
 docker run -d -p 8080:8080 -v /path/to/local/exts_dir:/var/local/geoserver-exts/ localhost --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
-You can use the `build_exts_dir.sh` script together with a [extensions](https://github.com/oscarfonts/docker-geoserver/tree/master/2.9.2/extensions) configuration file to create your own extensions directory easily.
+You can use the `build_exts_dir.sh` script together with a [extensions](https://github.com/oscarfonts/docker-geoserver/tree/master/extensions) configuration file to create your own extensions directory easily.
 
 > **Warning**: The `.jar` files contained in the extensions directory will be copied to the `WEB-INF/lib` directory of the GeoServer installation. Make sure to include only `.jar` files from trusted extensions to avoid security risks.
 
