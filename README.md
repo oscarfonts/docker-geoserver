@@ -20,15 +20,11 @@ Dockerized GeoServer.
 
 Active versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `stable`, `2.10.0` (*2.10.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.10.0/Dockerfile)
+* [`latest`, `2.10.0` (*2.10.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.10.0/Dockerfile)
 * [`maintenance`, `2.9.2` (*2.9.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.9.2/Dockerfile)
 
-<!---
-* [`development`, `2.11-SNAPSHOT` (*2.11-SNAPSHOT/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.11-SNAPSHOT/Dockerfile)
--->
 
-
-Other experimental (no automated build):
+Other experimental (not automated build):
 
 * [`oracle`](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/Dockerfile). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/run.sh).
 
