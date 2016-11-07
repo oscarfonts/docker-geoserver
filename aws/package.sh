@@ -59,5 +59,5 @@ cd $DIR/build
 zip -r ../geoserver.zip * .ebextensions
 cd - > /dev/null
 
-# rm -rf build
+rm -rf build
 
