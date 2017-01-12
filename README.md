@@ -42,7 +42,7 @@ docker pull oscarfonts/geoserver
 Run as a service, exposing port 8080 and using a hosted GEOSERVER_DATA_DIR:
 
 ```
-docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver localhost --name=MyGeoServerInstance oscarfonts/geoserver
+docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
 ### Configure extensions
@@ -50,7 +50,7 @@ docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver local
 To add extensions to your GeoServer installation, provide a directory with the unzipped extensions separated by directories (one directory per extension):
 
 ```
-docker run -d -p 8080:8080 -v /path/to/local/exts_dir:/var/local/geoserver-exts/ localhost --name=MyGeoServerInstance oscarfonts/geoserver
+docker run -d -p 8080:8080 -v /path/to/local/exts_dir:/var/local/geoserver-exts/ --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
 You can use the `build_exts_dir.sh` script together with a [extensions](https://github.com/oscarfonts/docker-geoserver/tree/master/extensions) configuration file to create your own extensions directory easily.
