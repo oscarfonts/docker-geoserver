@@ -2,7 +2,7 @@ FROM tomcat:8-jre8
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.9.1
+ENV GEOSERVER_VERSION 2.9.4
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 
@@ -66,3 +66,4 @@ ADD start.sh /usr/local/bin/start.sh
 CMD start.sh
 
 EXPOSE 8080
+
