@@ -20,8 +20,8 @@ Dockerized GeoServer.
 
 Active versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.10.2` (*2.10.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.10.2/Dockerfile)
-* [`maintenance`, `2.9.4` (*2.9.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.9.3/Dockerfile)
+* [`latest`, `2.11.0` (*2.11.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.11.0/Dockerfile)
+* [`maintenance`, `2.10.2` (*2.10.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.10.2/Dockerfile)
 
 
 Other experimental (not automated build):

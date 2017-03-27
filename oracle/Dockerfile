@@ -1,8 +1,8 @@
-FROM oscarfonts/geoserver:2.10.1
+FROM oscarfonts/geoserver:2.11.0
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.10.2
+ENV GEOSERVER_VERSION 2.11.0
 
 WORKDIR /usr/local/tomcat/webapps/geoserver/WEB-INF/lib
 
@@ -15,4 +15,3 @@ RUN wget http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_V
 COPY ojdbc7.jar ojdbc7.jar
 
 ENV CATALINA_OPTS "$CATALINA_OPTS -Doracle.jdbc.timezoneAsRegion=false"
-

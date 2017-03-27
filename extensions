@@ -31,6 +31,7 @@ pyramid
 #netcdf-out
 #ogr-wfs
 #ogr-wps
+#vectortiles
 #xslt
 
 ############
@@ -57,4 +58,3 @@ geofence
 #importer-bdb
 #inspire
 #printing
-
