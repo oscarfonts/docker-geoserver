@@ -1,8 +1,7 @@
-FROM oscarfonts/geoserver:2.11.2
-
+FROM oscarfonts/geoserver:2.12.0
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.11.2
+ENV GEOSERVER_VERSION 2.12.0
 
 WORKDIR /usr/local/tomcat/webapps/geoserver/WEB-INF/lib
 
