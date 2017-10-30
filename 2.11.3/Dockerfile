@@ -10,11 +10,11 @@ ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 #RUN echo "Acquire::http { Proxy \"http://`/sbin/ip route|awk '/default/ { print $3 }'`:3142\"; };" > /etc/apt/apt.conf.d/71-apt-cacher-ng
 
 # Microsoft fonts
-# RUN echo "deb http://httpredir.debian.org/debian jessie contrib" >> /etc/apt/sources.list
-# RUN set -x \
-#	&& apt-get update \
-#	&& apt-get install -yq ttf-mscorefonts-installer \
-#	&& rm -rf /var/lib/apt/lists/*
+RUN echo "deb http://httpredir.debian.org/debian jessie contrib" >> /etc/apt/sources.list
+RUN set -x \
+	&& apt-get update \
+	&& apt-get install -yq ttf-mscorefonts-installer \
+	&& rm -rf /var/lib/apt/lists/*
 
 # Native JAI & ImageIO
 RUN cd /usr/lib/jvm/java-8-openjdk-amd64 \
