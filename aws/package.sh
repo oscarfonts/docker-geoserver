@@ -13,7 +13,7 @@ where:
 delete_on_termination="false"
 volume_size=""
 volume_type="gp2"
-geoserver_version="2.10.0"
+geoserver_version="2.13.0"
 
 while getopts "h?g:dt:s:f:v:" opt; do
     case "$opt" in
