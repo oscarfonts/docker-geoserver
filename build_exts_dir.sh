@@ -53,7 +53,7 @@ fi
 
 majorVersion=`echo ${version} | grep -Eo "[0-9]+\.[0-9]."`
 baseSfUrl=http://sourceforge.net/projects/geoserver/files/GeoServer/${version}/extensions
-baseAresUrl=http://ares.boundlessgeo.com/geoserver/${majorVersion}.x/community-latest/
+baseAresUrl=https://build.geoserver.org/geoserver/${majorVersion}.x/community-latest/
 
 exts=`sed 's/#.*$//g;/^$/d' ${extsFile} 2>/dev/null`
 
