@@ -9,12 +9,13 @@
   }],
   "Volumes": [
     {
-      "HostDirectory": "/mnt/geoserver/data",
+      "HostDirectory": "/efs",
       "ContainerDirectory": "/var/local/geoserver"
     },
     {
-      "HostDirectory": "/var/app/current/conf",
-      "ContainerDirectory": "/usr/local/tomcat/conf/Catalina/localhost"
+      "HostDirectory": "/var/app/current/extensions",
+      "ContainerDirectory": "/var/local/geoserver-exts/"
     }
   ]
 }
+
