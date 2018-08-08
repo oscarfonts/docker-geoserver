@@ -8,6 +8,8 @@ We can create the empty file system easily either with the [console](https://doc
 
 > **NOTE**: In case you want to use an existing data directory, you will need to start with an empty one and fill it once the environment has been deployed.
 
+You might need to configure a specific security group allowing **inbound** traffic to the file system so instances are able to use it (see [official doc](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs-create-security-groups.html) for details).
+
 ## Create the application version
 
 First, you **must** modify the `.ebextensions/02_storage-efs-mountfilesystem.config` file to set your **File system ID**.
@@ -25,6 +27,12 @@ Finally, just create a zip file containing `Dockerrun.aws.json`, `.ebextensions`
 It is recommended to use at least `t2.small` instances so GeoServer has enough memory.
 
 You **must** set a `GS_ADMIN_PASS` environment variable with the password for `admin` in GeoServer. This is used to reload the catalog via REST when the shared data directory changes.
+
+You **must** set the **Session stickiness** option in the *Load Balancer* options so the user's session for the GeoServer GUI is bound to a specific instance (see [official doc](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html) for details).
+
+You might need to configure a specific security group allowing **outbound** traffic to the file system so instances are able to use it (see [official doc](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs-create-security-groups.html) for details).
+
+You might want to enable the *Load balancing across multiple Availability Zones* option in the *Load Balancer* options in case your instances are created in different Availability Zones.
 
 Then, just create the environment as any other Elastic Beanstalk environment.
 
