@@ -2,7 +2,7 @@ FROM tomcat:8-jre8
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.13.2
+ENV GEOSERVER_VERSION 2.13.3
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 
@@ -10,7 +10,7 @@ ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 #RUN echo "Acquire::http { Proxy \"http://`/sbin/ip route|awk '/default/ { print $3 }'`:3142\"; };" > /etc/apt/apt.conf.d/71-apt-cacher-ng
 
 # Microsoft fonts
-RUN echo "deb http://httpredir.debian.org/debian jessie contrib" >> /etc/apt/sources.list
+RUN echo "deb http://httpredir.debian.org/debian stretch contrib" >> /etc/apt/sources.list
 RUN set -x \
 	&& apt-get update \
 	&& apt-get install -yq ttf-mscorefonts-installer \
