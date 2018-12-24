@@ -1,4 +1,4 @@
-FROM tomcat:8-jre8
+FROM tomcat:9-jre8
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
