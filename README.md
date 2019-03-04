@@ -10,7 +10,8 @@ Dockerized GeoServer.
 * Taken care of [JVM Options](http://docs.geoserver.org/latest/en/user/production/container.html), to avoid PermGen space issues &c.
 * Separate GEOSERVER_DATA_DIR location (on /var/local/geoserver).
 * [CORS ready](http://enable-cors.org/server_tomcat.html).
-* Automatic installation of [Native JAI and Image IO](http://docs.geoserver.org/latest/en/user/production/java.html#install-native-jai-and-jai-image-i-o-extensions) for better performance.
+* Up to GeoServer 2.14.x: Automatic installation of [Native JAI and Image IO](http://docs.geoserver.org/latest/en/user/production/java.html#install-native-jai-and-jai-image-i-o-extensions) for better performance.
+* From GeoServer 2.15.x: OpenJDK 11.
 * Configurable extensions.
 * Automatic installation of [Microsoft Core Fonts](http://www.microsoft.com/typography/fonts/web.aspx) for better labelling compatibility.
 * AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
@@ -20,8 +21,8 @@ Dockerized GeoServer.
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.14.1` (*2.14.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.14.1/Dockerfile)
-* [`2.13.4` (*2.13.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.13.4/Dockerfile)
+* [`latest`, `2.15.0` (*2.15.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.15.0/Dockerfile)
+* [`2.14.2` (*2.14.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.14.2/Dockerfile)
 
 
 Other experimental (not automated build):

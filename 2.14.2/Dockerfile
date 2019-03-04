@@ -2,7 +2,7 @@ FROM tomcat:9-jre8
 
 MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
 
-ENV GEOSERVER_VERSION 2.14.1
+ENV GEOSERVER_VERSION 2.14.2
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 
