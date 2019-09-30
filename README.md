@@ -1,13 +1,11 @@
-docker-geoserver
-================
+# docker-geoserver
 
 Dockerized GeoServer.
-
 
 ## Features
 
 * Built on top of [Docker's official tomcat image](https://hub.docker.com/_/tomcat/).
-* Taken care of [JVM Options](http://docs.geoserver.org/latest/en/user/production/container.html), to avoid PermGen space issues &c.
+* Taken care of [JVM Options](http://docs.geoserver.org/latest/en/user/production/container.html).
 * Separate GEOSERVER_DATA_DIR location (on /var/local/geoserver).
 * [CORS ready](http://enable-cors.org/server_tomcat.html).
 * Up to GeoServer 2.14.x: Automatic installation of [Native JAI and Image IO](http://docs.geoserver.org/latest/en/user/production/java.html#install-native-jai-and-jai-image-i-o-extensions) for better performance.
@@ -16,14 +14,12 @@ Dockerized GeoServer.
 * Automatic installation of [Microsoft Core Fonts](http://www.microsoft.com/typography/fonts/web.aspx) for better labelling compatibility.
 * AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
-
 ## Trusted builds
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.15.2` (*2.15.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.15.2/Dockerfile)
-* [`2.14.4` (*2.14.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.14.4/Dockerfile)
-
+* [`latest`, `2.16.0` (*2.16.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.16.0/Dockerfile)
+* [`2.15.3` (*2.15.3/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.15.3/Dockerfile)
 
 Other experimental (not automated build):
 
@@ -31,18 +27,17 @@ Other experimental (not automated build):
 
 * [`h2-vector`](https://github.com/oscarfonts/docker-geoserver/blob/master/h2-vector/Dockerfile). Plays nice with [oscarfonts/h2:geodb](https://hub.docker.com/r/oscarfonts/h2/tags/), and includes sample scripts for docker-compose and systemd.
 
-
 ## Running
 
 Get the image:
 
-```
+```bash
 docker pull oscarfonts/geoserver
 ```
 
 Run as a service, exposing port 8080 and using a hosted GEOSERVER_DATA_DIR:
 
-```
+```bash
 docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
@@ -50,7 +45,7 @@ docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver --nam
 
 To add extensions to your GeoServer installation, provide a directory with the unzipped extensions separated by directories (one directory per extension):
 
-```
+```bash
 docker run -d -p 8080:8080 -v /path/to/local/exts_dir:/var/local/geoserver-exts/ --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
@@ -62,7 +57,7 @@ You can use the `build_exts_dir.sh` script together with a [extensions](https://
 
 It is also possible to configure the context path by providing a Catalina configuration directory:
 
-```
+```bash
 docker run -d -p 8080:8080 -v /path/to/local/data_dir:/var/local/geoserver -v /path/to/local/conf_dir:/usr/local/tomcat/conf/Catalina/localhost --name=MyGeoServerInstance oscarfonts/geoserver
 ```
 
@@ -72,6 +67,6 @@ See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2
 
 See the tomcat logs while running:
 
-```
+```bash
 docker logs -f MyGeoServerInstance
 ```

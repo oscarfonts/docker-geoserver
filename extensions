@@ -10,6 +10,7 @@
 #feature-pregeneralized
 #sqlserver
 #teradata
+#mongodb
 
 ####################
 # Coverage formats #
@@ -41,6 +42,9 @@ pyramid
 #wcs2_0-eo
 #wps
 #wps-cluster-hazelcast
+#geofence
+#geofence-server
+#sldservice
 
 ##################
 # Miscellaneouss #
@@ -50,11 +54,9 @@ control-flow
 #querylayer # Cross Layer Filtering
 #css
 #cas
-geofence
-#geofence-server
 #monitor
-#monitor-hibernate
 #importer
 #importer-bdb
 #inspire
 #printing
+#ysld
