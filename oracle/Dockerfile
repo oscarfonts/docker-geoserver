@@ -1,5 +1,6 @@
 FROM oscarfonts/geoserver:2.16.0
-MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
+
+LABEL maintainer="Oscar Fonts <oscar.fonts@geomati.co>"
 
 ENV GEOSERVER_VERSION 2.16.0
 

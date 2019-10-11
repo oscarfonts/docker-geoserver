@@ -1,10 +1,11 @@
 FROM tomcat:9-jdk11
 
-MAINTAINER Oscar Fonts <oscar.fonts@geomati.co>
+LABEL maintainer="Oscar Fonts <oscar.fonts@geomati.co>"
 
 ENV GEOSERVER_VERSION 2.15.3
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
+ENV GEOSERVER_EXT_DIR /var/local/geoserver-exts
 
 # Uncomment to use APT cache (requires apt-cacher-ng on host)
 #RUN echo "Acquire::http { Proxy \"http://`/sbin/ip route|awk '/default/ { print $3 }'`:3142\"; };" > /etc/apt/apt.conf.d/71-apt-cacher-ng
@@ -51,7 +52,15 @@ ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
 	-Xms768m -Xmx1560m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
 	-DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
 
+# Create tomcat user to avoid root access. 
+RUN addgroup --gid 1099 tomcat && useradd -m -u 1099 -g tomcat tomcat \
+    && chown -R tomcat:tomcat . \
+    && chown -R tomcat:tomcat ${GEOSERVER_DATA_DIR} \
+    && chown -R tomcat:tomcat ${GEOSERVER_INSTALL_DIR}
+
 ADD start.sh /usr/local/bin/start.sh
-CMD start.sh
+ENTRYPOINT [ "start.sh" ]
+
+VOLUME ["${GEOSERVER_DATA_DIR}", "${GEOSERVER_EXT_DIR}"]
 
 EXPOSE 8080
