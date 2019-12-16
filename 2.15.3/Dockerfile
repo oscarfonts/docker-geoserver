@@ -59,7 +59,7 @@ RUN addgroup --gid 1099 tomcat && useradd -m -u 1099 -g tomcat tomcat \
     && chown -R tomcat:tomcat ${GEOSERVER_INSTALL_DIR}
 
 ADD start.sh /usr/local/bin/start.sh
-ENTRYPOINT [ "start.sh" ]
+ENTRYPOINT [ "/bin/sh", "/usr/local/bin/start.sh"]
 
 VOLUME ["${GEOSERVER_DATA_DIR}", "${GEOSERVER_EXT_DIR}"]
 
