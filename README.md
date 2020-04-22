@@ -18,8 +18,9 @@ Dockerized GeoServer.
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.16.1` (*2.16.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.16.1/Dockerfile)
-* [`2.15.3` (*2.15.3/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.15.3/Dockerfile)
+* [`latest`, `2.17.0` (*2.17.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.17.0/Dockerfile)
+* [`2.16.2` (*2.16.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.16.2/Dockerfile)
+* [`2.15.4` (*2.15.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.15.4/Dockerfile)
 
 Other experimental dockerfiles (not automated build):
 
@@ -71,4 +72,4 @@ It is also possible to configure the context path by providing a Catalina config
 docker run -d -p 8080:8080 -v ${PWD}/config_dir:/usr/local/tomcat/conf/Catalina/localhost oscarfonts/geoserver
 ```
 
-See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.16.1/conf).
+See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.17.0/conf).
