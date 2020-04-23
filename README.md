@@ -20,7 +20,6 @@ Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geos
 
 * [`latest`, `2.17.0` (*2.17.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.17.0/Dockerfile)
 * [`2.16.2` (*2.16.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.16.2/Dockerfile)
-* [`2.15.4` (*2.15.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.15.4/Dockerfile)
 
 Other experimental dockerfiles (not automated build):
 
