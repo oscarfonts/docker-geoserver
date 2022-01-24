@@ -7,6 +7,9 @@ ENV GEOSERVER_DATA_DIR /var/local/geoserver
 ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 ENV GEOSERVER_EXT_DIR /var/local/geoserver-exts
 
+ARG GEOSERVER_PATH /geoserver
+ENV GEOSERVER_HEALTH_CHECK_URL http://localhost:8080/geoserver/ows
+
 # Uncomment to use APT cache (requires apt-cacher-ng on host)
 #RUN echo "Acquire::http { Proxy \"http://`/sbin/ip route|awk '/default/ { print $3 }'`:3142\"; };" > /etc/apt/apt.conf.d/71-apt-cacher-ng
 
@@ -64,3 +67,6 @@ ENTRYPOINT [ "/bin/sh", "/usr/local/bin/start.sh"]
 VOLUME ["${GEOSERVER_DATA_DIR}", "${GEOSERVER_EXT_DIR}"]
 
 EXPOSE 8080
+
+HEALTHCHECK --start-period=10s --interval=10s --timeout=5s --retries=50 \
+    CMD curl -f ${GEOSERVER_HEALTH_CHECK_URL} || exit 1

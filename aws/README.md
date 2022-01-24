@@ -42,17 +42,4 @@ In case you want to import an existing data directory, wait until the environmen
 
 ## Deploy to a different path than `/geoserver`
 
-
-In case you want to deploy GeoServer to a different path than `/geoserver`, you will need to:
-
-* Include another volume in `Dockerrun.aws.json`:
-```json
-{
-  "HostDirectory": "/var/app/current/conf",
-  "ContainerDirectory": "/usr/local/tomcat/conf/Catalina/localhost"
-}
-```
-
-* Include a `conf` directory with the configuration for Tomcat. You can see some examples in this repository (`<version>/conf` directories).
-
-* Modify `.ebextensions/03_reload-geoserver-on-change.config` to access the correct REST API endpoint to reload the configuration.
+In case you want to deploy GeoServer to a different path than `/geoserver`, remember to edit `.ebextensions/03_reload-geoserver-on-change.config` to access the correct REST API endpoint to reload the configuration.

@@ -12,6 +12,8 @@ Dockerized GeoServer.
 * [CORS ready](http://enable-cors.org/server_tomcat.html).
 * Taken care of [JVM Options](http://docs.geoserver.org/latest/en/user/production/container.html).
 * Automatic installation of [Microsoft Core Fonts](http://www.microsoft.com/typography/fonts/web.aspx) for better labelling compatibility.
+* Custom geoserver deployment path
+* docker health check
 * AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
 ## Trusted builds
@@ -42,6 +44,12 @@ Run as a service, exposing port 8080 and using a hosted GEOSERVER_DATA_DIR:
 ```bash
 docker run -d -p 8080:8080 -v ${PWD}/data_dir:/var/local/geoserver oscarfonts/geoserver
 ```
+
+### Custom base path
+
+* On build time, set the GEOSERVER_PATH arg to change the geoserver base path. It defaults to `/geoserver`.
+* On run time, set the GEOSERVER_HEALTH_CHECK_URL to test for a valid (internal) URL that should respond HTTP 200 OK. It defaults to `http://localhost:8080/geoserver/ows`.
+
 
 ### Custom UID and GID
 
