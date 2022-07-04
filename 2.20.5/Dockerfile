@@ -16,7 +16,7 @@ ENV GEOSERVER_PATH=/geoserver
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -yq ttf-mscorefonts-installer \
+	&& apt-get install -yq ttf-mscorefonts-installer unzip \
 	&& rm -rf /var/lib/apt/lists/*
 
 # GeoServer
