@@ -13,7 +13,7 @@ ENV GEOSERVER_PATH=/geoserver
 #RUN echo "Acquire::http { Proxy \"http://`/sbin/ip route|awk '/default/ { print $3 }'`:3142\"; };" > /etc/apt/apt.conf.d/71-apt-cacher-ng
 
 # Microsoft fonts
-RUN echo "deb http://httpredir.debian.org/debian stretch contrib" >> /etc/apt/sources.list
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
 RUN set -x \
 	&& apt-get update \
 	&& apt-get install -yq ttf-mscorefonts-installer \
