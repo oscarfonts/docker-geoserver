@@ -1,4 +1,4 @@
-FROM oscarfonts/geoserver:2.21.2
+FROM oscarfonts/geoserver:2.22.0
 
 LABEL maintainer="Geomatico <info@geomatico.es>"
 
