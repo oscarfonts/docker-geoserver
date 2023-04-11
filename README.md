@@ -20,11 +20,12 @@ Dockerized GeoServer.
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.22.2` (*2.22.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.22.2/Dockerfile)
-* [`2.21.4` (*2.21.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.21.4/Dockerfile)
+* [`latest`, `2.23.0` (*2.23.0/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.23.0/Dockerfile)
+* [`2.22.2` (*2.22.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.22.2/Dockerfile)
 
 Security patches for older versions:
 
+* [`2.21.4` (*2.21.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.21.4/Dockerfile)
 * [`2.20.7` (*2.20.7/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.20.7/Dockerfile)
 * [`2.19.7` (*2.19.7/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.19.7/Dockerfile)
 * [`2.18.7` (*2.18.7/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.18.7/Dockerfile)
@@ -85,4 +86,4 @@ It is also possible to configure the context path by providing a Catalina config
 docker run -d -p 8080:8080 -v ${PWD}/config_dir:/usr/local/tomcat/conf/Catalina/localhost oscarfonts/geoserver
 ```
 
-See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.22.2/conf).
+See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.23.0/conf).
