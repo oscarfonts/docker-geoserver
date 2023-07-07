@@ -4,7 +4,7 @@ Dockerized GeoServer.
 
 ## Features
 
-* Built on top of [Docker's official tomcat image](https://hub.docker.com/_/tomcat/).
+* Built on top of [Docker's official tomcat image](https://hub.docker.com/_/tomcat/). Using `tomcat:9-jre17` as base for versions 2.23.1 and above, and `tomcat:9-jdk11` for versions below 2.23.1.
 * Running tomcat process as non-root user.
 * Separate GEOSERVER_DATA_DIR location (on /var/local/geoserver).
 * Configurable extensions.
@@ -16,7 +16,7 @@ Dockerized GeoServer.
 * docker health check
 * AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
-## Trusted builds
+## Trusted builds/ows?service=WMS&version=1.3.0&request=GetCapabilities
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 

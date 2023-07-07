@@ -1,4 +1,4 @@
-FROM tomcat:9-jdk11
+FROM tomcat:9-jre17
 
 LABEL maintainer="Oscar Fonts <oscar.fonts@geomati.co>"
 
@@ -34,25 +34,29 @@ RUN mkdir ${GEOSERVER_DATA_DIR} \
 # Enable CORS
 RUN sed -i '\:</web-app>:i\
 <filter>\n\
-    <filter-name>CorsFilter</filter-name>\n\
-    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>\n\
-    <init-param>\n\
-        <param-name>cors.allowed.origins</param-name>\n\
-        <param-value>*</param-value>\n\
-    </init-param>\n\
-    <init-param>\n\
-        <param-name>cors.allowed.methods</param-name>\n\
-        <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>\n\
-    </init-param>\n\
+  <filter-name>cross-origin</filter-name>\n\
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>\n\
+  <init-param>\n\
+    <param-name>cors.allowed.origins</param-name>\n\
+    <param-value>*</param-value>\n\
+  </init-param>\n\
+  <init-param>\n\
+    <param-name>cors.allowed.methods</param-name>\n\
+    <param-value>GET,POST,PUT,DELETE,HEAD,OPTIONS</param-value>\n\
+  </init-param>\n\
+  <init-param>\n\
+  <param-name>cors.allowed.headers</param-name>\n\
+    <param-value>*</param-value>\n\
+  </init-param>\n\
 </filter>\n\
 <filter-mapping>\n\
-    <filter-name>CorsFilter</filter-name>\n\
-    <url-pattern>/*</url-pattern>\n\
+  <filter-name>cross-origin</filter-name>\n\
+  <url-pattern>/*</url-pattern>\n\
 </filter-mapping>' ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml
 
 # Tomcat environment
 ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
-	-Xms768m -Xmx1560m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
+	-Xms128m -Xmx1560m -XX:NewSize=48m \
 	-DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
 
 # Create tomcat user to avoid root access. 
@@ -69,4 +73,4 @@ VOLUME ["${GEOSERVER_DATA_DIR}", "${GEOSERVER_EXT_DIR}"]
 EXPOSE 8080
 
 HEALTHCHECK --start-period=10s --interval=10s --timeout=5s --retries=50 \
-    CMD curl -f "http://localhost:8080${GEOSERVER_PATH}/ows" || exit 1
+    CMD curl -f "http://localhost:8080${GEOSERVER_PATH}/ows?service=WMS&version=1.3.0&request=GetCapabilities" || exit 1
