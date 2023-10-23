@@ -1,5 +1,30 @@
 #!/bin/sh
 
+# Enable CORS
+if [ "${GEOSERVER_CORS_ENABLED}" != "false" ]; then
+  sed -i "\:</web-app>:i\
+    <filter>\n\
+      <filter-name>cross-origin</filter-name>\n\
+      <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>\n\
+      <init-param>\n\
+        <param-name>cors.allowed.origins</param-name>\n\
+        <param-value>${GEOSERVER_CORS_ALLOWED_ORIGINS:-*}</param-value>\n\
+      </init-param>\n\
+      <init-param>\n\
+        <param-name>cors.allowed.methods</param-name>\n\
+        <param-value>${GEOSERVER_CORS_ALLOWED_METHODS:-GET,POST,PUT,DELETE,HEAD,OPTIONS}</param-value>\n\
+      </init-param>\n\
+      <init-param>\n\
+      <param-name>cors.allowed.headers</param-name>\n\
+        <param-value>${GEOSERVER_CORS_ALLOWED_HEADERS:-*}</param-value>\n\
+      </init-param>\n\
+    </filter>\n\
+    <filter-mapping>\n\
+      <filter-name>cross-origin</filter-name>\n\
+      <url-pattern>${GEOSERVER_CORS_URL_PATTERN:-/*}</url-pattern>\n\
+    </filter-mapping>" ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml
+fi
+
 if [ -n "${CUSTOM_UID}" ]; then
   echo "Using custom UID ${CUSTOM_UID}."
   usermod -u ${CUSTOM_UID} tomcat
