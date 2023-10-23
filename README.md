@@ -16,7 +16,7 @@ Dockerized GeoServer.
 * docker health check
 * AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
-## Trusted builds/ows?service=WMS&version=1.3.0&request=GetCapabilities
+## Trusted builds
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
