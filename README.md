@@ -88,3 +88,18 @@ docker run -d -p 8080:8080 -v ${PWD}/config_dir:/usr/local/tomcat/conf/Catalina/
 ```
 
 See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.24.0/conf).
+
+### CORS
+
+CORS is configured automatically in the servlet web.xml filters. If you have another
+component in front that already takes care of it you can disable it with the environment variable
+`-e "GEOSERVER_CORS_ENABLED=false"`.
+
+It is also possible to fine tune it for specific origins, methods, etc. with the following variables:
+- `GEOSERVER_CORS_ALLOWED_ORIGINS` (cors.allowed.origins)
+- `GEOSERVER_CORS_ALLOWED_METHODS` (cors.allowed.methods)
+- `GEOSERVER_CORS_ALLOWED_HEADERS` (cors.allowed.headers)
+- `GEOSERVER_CORS_URL_PATTERN` (filter-mapping url-pattern)
+
+See [Tomcat documentation](https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter)
+for more info.
