@@ -56,7 +56,6 @@ docker run -d -p 8080:8080 -v ${PWD}/data_dir:/var/local/geoserver oscarfonts/ge
 ### Custom base path
 
 * On build time, set the GEOSERVER_PATH arg to change the geoserver base path. It defaults to `/geoserver`.
-* On run time, set the GEOSERVER_HEALTH_CHECK_URL to test for a valid (internal) URL that should respond HTTP 200 OK. It defaults to `http://localhost:8080/geoserver/ows`.
 
 
 ### Custom UID and GID

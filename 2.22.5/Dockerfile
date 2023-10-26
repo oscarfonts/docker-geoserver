@@ -50,4 +50,4 @@ VOLUME ["${GEOSERVER_DATA_DIR}", "${GEOSERVER_EXT_DIR}"]
 EXPOSE 8080
 
 HEALTHCHECK --start-period=10s --interval=10s --timeout=5s --retries=50 \
-    CMD curl -f "http://localhost:8080${GEOSERVER_PATH}/ows" || exit 1
+    CMD curl -f "http://localhost:8080${GEOSERVER_PATH}/ows?service=WMS&version=1.3.0&request=GetCapabilities" || exit 1
