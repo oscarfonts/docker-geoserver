@@ -42,6 +42,9 @@ RUN addgroup --gid 1099 tomcat && useradd -m -u 1099 -g tomcat tomcat \
     && chown -R tomcat:tomcat ${GEOSERVER_DATA_DIR} \
     && chown -R tomcat:tomcat ${GEOSERVER_INSTALL_DIR}
 
+# index.html is used for health check; ensure build fails early if not present
+RUN cat ${GEOSERVER_INSTALL_DIR}/index.html
+
 ADD start.sh /usr/local/bin/start.sh
 ENTRYPOINT [ "/bin/sh", "/usr/local/bin/start.sh"]
 
@@ -50,4 +53,4 @@ VOLUME ["${GEOSERVER_DATA_DIR}", "${GEOSERVER_EXT_DIR}"]
 EXPOSE 8080
 
 HEALTHCHECK --start-period=10s --interval=10s --timeout=5s --retries=50 \
-    CMD curl -f "http://localhost:8080${GEOSERVER_PATH}/ows?service=WMS&version=1.3.0&request=GetCapabilities" || exit 1
+    CMD curl -f "http://localhost:8080${GEOSERVER_PATH}/index.html" || exit 1
