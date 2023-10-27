@@ -14,7 +14,6 @@ Dockerized GeoServer.
 * Automatic installation of [Microsoft Core Fonts](http://www.microsoft.com/typography/fonts/web.aspx) for better labelling compatibility.
 * Custom geoserver deployment path
 * docker health check
-* AWS configuration files and scripts in order to deploy easily using [Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/). See [github repo](https://github.com/oscarfonts/docker-geoserver/blob/master/aws/README.md). Thanks to @victorzinho
 
 ## Trusted builds
 
@@ -31,11 +30,15 @@ Security patches for older versions:
 * [`2.19.7` (*2.19.7/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.19.7/Dockerfile)
 * [`2.18.7` (*2.18.7/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.18.7/Dockerfile)
 
+## Unsupported builds
+
 Other experimental dockerfiles (not automated build):
 
 * [`oracle`](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/Dockerfile). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/run.sh).
-
 * [`h2-vector`](https://github.com/oscarfonts/docker-geoserver/blob/master/h2-vector/Dockerfile). Plays nicely with [oscarfonts/h2:geodb](https://hub.docker.com/r/oscarfonts/h2/tags/), and includes sample scripts for docker-compose and systemd.
+* [`ecw`](https://github.com/oscarfonts/docker-geoserver/blob/master/unsupported/ecw/Dockerfile). Adding GDAL plugin with ECW support.
+
+Think of them more as recipes or documentation rather than production-ready builds :)
 
 ## Running
 
