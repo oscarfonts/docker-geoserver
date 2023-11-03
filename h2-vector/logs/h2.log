@@ -1,0 +1,2 @@
+Web server running on http://172.21.0.2:81 (others can connect)
+TCP server running on tcp://172.21.0.2:1521 (others can connect)
