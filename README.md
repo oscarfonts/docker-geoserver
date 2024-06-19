@@ -19,12 +19,12 @@ Dockerized GeoServer.
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.25.1` (*2.25.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.25.1/Dockerfile)
-* [`2.24.3` (*2.24.3/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.24.3/Dockerfile)
+* [`latest`, `2.25.2` (*2.25.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.25.2/Dockerfile)
+* [`2.24.4` (*2.24.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.24.4/Dockerfile)
 
 Security patches for older versions:
 
-* [`2.23.5` (*2.23.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.23.5/Dockerfile)
+* [`2.23.6` (*2.23.6/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.23.6/Dockerfile)
 * [`2.22.5` (*2.22.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.22.5/Dockerfile) Latest with JDK 11
 * [`2.21.5` (*2.21.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.21.5/Dockerfile)
 * [`2.20.7` (*2.20.7/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.20.7/Dockerfile)
@@ -90,7 +90,7 @@ It is also possible to configure the context path by providing a Catalina config
 docker run -d -p 8080:8080 -v ${PWD}/config_dir:/usr/local/tomcat/conf/Catalina/localhost oscarfonts/geoserver
 ```
 
-See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.24.3/conf).
+See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.25.2/conf).
 
 ### CORS
 
