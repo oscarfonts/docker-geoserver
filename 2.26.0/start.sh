@@ -21,7 +21,7 @@ if [ "${GEOSERVER_CORS_ENABLED}" != "false" -a -z "$(grep "<filter-name>\s*cross
     </filter>\n\
     <filter-mapping>\n\
       <filter-name>cross-origin</filter-name>\n\
-      <url-pattern>${GEOSERVER_CORS_CROSS_ORIGIN:-/*}</url-pattern>\n\
+      <url-pattern>${GEOSERVER_CORS_URL_PATTERN:-/*}</url-pattern>\n\
     </filter-mapping>" ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml
 fi
 
