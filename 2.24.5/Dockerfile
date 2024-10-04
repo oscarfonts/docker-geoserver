@@ -1,8 +1,8 @@
-FROM tomcat:9-jdk11
+FROM tomcat:9-jre17
 
 LABEL maintainer="Oscar Fonts <oscar.fonts@geomati.co>"
 
-ENV GEOSERVER_VERSION 2.21.5
+ENV GEOSERVER_VERSION 2.24.5
 ENV GEOSERVER_DATA_DIR /var/local/geoserver
 ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 ENV GEOSERVER_EXT_DIR /var/local/geoserver-exts
@@ -33,7 +33,7 @@ RUN mkdir ${GEOSERVER_DATA_DIR} \
 
 # Tomcat environment
 ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
-	-Xms768m -Xmx1560m -XX:+UseConcMarkSweepGC -XX:NewSize=48m \
+	-Xms128m -Xmx1560m -XX:NewSize=48m \
 	-DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
 
 # Create tomcat user to avoid root access. 
