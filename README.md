@@ -35,7 +35,7 @@ If you are concerned about security and want to keep GeoServer in good shape, [p
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
 * [`latest`, `2.26.1` (*2.26.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.26.1/Dockerfile)
-* [`2.25.4` (*2.25.4/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.25.4/Dockerfile)
+* [`2.25.5` (*2.25.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.25.5/Dockerfile)
 * [`2.24.5` (*2.24.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.24.5/Dockerfile)
 * [`2.23.6` (*2.23.6/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.23.6/Dockerfile)
 
@@ -99,7 +99,6 @@ It is also possible to configure the context path by providing a Catalina config
 docker run -d -p 8080:8080 -v ${PWD}/config_dir:/usr/local/tomcat/conf/Catalina/localhost oscarfonts/geoserver
 ```
 
-See some [examples](https://github.com/oscarfonts/docker-geoserver/tree/master/2.25.4/conf).
 
 ### CORS
 
