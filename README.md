@@ -34,7 +34,7 @@ If you are concerned about security and want to keep GeoServer in good shape, [p
 
 Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geoserver/) available on [docker registry](https://registry.hub.docker.com/):
 
-* [`latest`, `2.26.1` (*2.26.1/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.26.1/Dockerfile)
+* [`latest`, `2.26.2` (*2.26.2/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.26.2/Dockerfile)
 * [`2.25.5` (*2.25.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.25.5/Dockerfile)
 * [`2.24.5` (*2.24.5/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.24.5/Dockerfile)
 * [`2.23.6` (*2.23.6/Dockerfile*)](https://github.com/oscarfonts/docker-geoserver/blob/master/2.23.6/Dockerfile)
