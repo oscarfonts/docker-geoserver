@@ -41,7 +41,6 @@ RUN chown -R ubuntu:ubuntu . \
     && chown -R ubuntu:ubuntu ${GEOSERVER_DATA_DIR} \
     && chown -R ubuntu:ubuntu ${GEOSERVER_INSTALL_DIR}
 
-
 # index.html is used for health check; ensure build fails early if not present
 RUN cat ${GEOSERVER_INSTALL_DIR}/index.html
 

@@ -36,11 +36,10 @@ ENV CATALINA_OPTS "-server -Djava.awt.headless=true \
 	-Xms128m -Xmx1560m -XX:NewSize=48m \
 	-DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
 
-# Create tomcat user to avoid root access. 
-RUN addgroup --gid 1099 tomcat && useradd -m -u 1099 -g tomcat tomcat \
-    && chown -R tomcat:tomcat . \
-    && chown -R tomcat:tomcat ${GEOSERVER_DATA_DIR} \
-    && chown -R tomcat:tomcat ${GEOSERVER_INSTALL_DIR}
+# Use default ubuntu user (1000:1000) to avoid root access.
+RUN chown -R ubuntu:ubuntu . \
+    && chown -R ubuntu:ubuntu ${GEOSERVER_DATA_DIR} \
+    && chown -R ubuntu:ubuntu ${GEOSERVER_INSTALL_DIR}
 
 # index.html is used for health check; ensure build fails early if not present
 RUN cat ${GEOSERVER_INSTALL_DIR}/index.html
