@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Enable CORS
-if [ "${GEOSERVER_CORS_ENABLED}" != "false" -a -z "$(grep "<filter-name>\s*cross-origin" ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml)" ]; then
+if [ "${GEOSERVER_CORS_ENABLED}" != "false" -a -z "$(sed '/<!--/,/-->/d' ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml | grep "<filter-name>\s*cross-origin")" ]; then 
   sed -i "\:</web-app>:i\
     <filter>\n\
       <filter-name>cross-origin</filter-name>\n\
