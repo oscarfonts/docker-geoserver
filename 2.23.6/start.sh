@@ -32,7 +32,7 @@ if [ -n "${CUSTOM_UID}" ]; then
     echo "CUSTOM_UID already in use for ubuntu user. Nothing to do."
   else
     usermod -u ${CUSTOM_UID} ubuntu
-    find / -xdev -user 1000 -exec chown -h ubuntu '{}' +
+    find / -xdev -user 1000 -print0 | xargs -0 -P $(nproc) -n 1 chown -h ubuntu
   fi
 fi
 
