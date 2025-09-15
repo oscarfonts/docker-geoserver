@@ -45,8 +45,8 @@ Latest versions with [automated builds](https://hub.docker.com/r/oscarfonts/geos
 
 Other experimental dockerfiles (not automated build):
 
-* [`oracle`](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/Dockerfile). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/master/oracle/run.sh).
-* [`h2-vector`](https://github.com/oscarfonts/docker-geoserver/blob/master/h2-vector/Dockerfile). Plays nicely with [oscarfonts/h2:geodb](https://hub.docker.com/r/oscarfonts/h2/tags/), and includes sample scripts for docker-compose and systemd.
+* [`oracle`](https://github.com/oscarfonts/docker-geoserver/blob/master/unsupported/oracle/Dockerfile). Uses [wnameless/oracle-xe-11g](https://hub.docker.com/r/wnameless/oracle-xe-11g/), needs ojdbc7.jar and [setting up a database](https://github.com/oscarfonts/docker-geoserver/blob/master/unsupported/oracle/setup.sql). See [the run commands](https://github.com/oscarfonts/docker-geoserver/blob/master/unsupported/oracle/run.sh).
+* [`h2-vector`](https://github.com/oscarfonts/docker-geoserver/blob/master/unsupported/h2-vector/Dockerfile). Plays nicely with [oscarfonts/h2:geodb](https://hub.docker.com/r/oscarfonts/h2/tags/), and includes sample scripts for docker-compose and systemd.
 * DEPRECATED [`ecw`](https://github.com/oscarfonts/docker-geoserver/blob/master/unsupported/ecw/Dockerfile). Added GDAL plugin with ECW support to legacy GeoServer versions, not distributed anymore. Needs an update to recent versions.
 
 Think of them more as recipes or documentation rather than production-ready builds :)
